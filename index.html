@@ -62,20 +62,37 @@
             font-size: 14px;
           }
         }
+        body{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          width: 100vw;
+        }
+        #form-box{
+          width: 100px;
+          height: 100px;
+        }
     </style>
   </head>
 
   <body>
-    <div id="flashlight"></div>
-    <br>
-    <p>
+    <div id="form-box">
+        <form>
+          <label for="name">Escribe tu nombre: </label>
+          <input type="text" name="name" id="name" placeholder="">
+        </form>
+    </div>
+    <!-- <div id="flashlight"></div> -->
+<!--     <br> -->
+   <!--  <p>
      Myriam, la verdad no esperé volver a sentir lo mismo al verte, eres ese viento que eleva esa llama que tengo dentro. Lamento por siempre dejarte ir y  
-    </p>
-    <p>
+    </p> -->
+<!--     <p>
       
-    </p>
+    </p> -->
     <script>
-      alert("Move your mouse/finger across the screen!")
+      //alert("Move your mouse/finger across the screen!")
       let mouseX = 0;
       let mouseY = 0;
       let flashlight = document.getElementById("flashlight");
