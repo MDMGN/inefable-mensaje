@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet" />
+    <style>
+      * {
+          padding: 0;
+          margin: 0;
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          cursor: none;
+          font-family: "Poppins", sans-serif;
+        }
+        p {
+          font-size: 1em;
+          text-align: justify;
+          line-height: 1.8em;
+          padding: 0 2em;
+        }
+        #flashlight {
+          --Xpos: 50vw;
+          --Ypos: 50vh;
+        }
+        #flashlight:before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          pointer-events: none;
+          background: -o-radial-gradient(
+            var(--Xpos) var(--Ypos),
+            circle 10em,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 1)
+          );
+          background: radial-gradient(
+            circle 10em at var(--Xpos) var(--Ypos),
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 1)
+          );
+        }
+        a {
+          display: block;
+          background-color: #4786fb;
+          text-align: center;
+          text-decoration: none;
+          font-size: 1.4em;
+          font-weight: 600;
+          color: #ffffff;
+          padding: 0.8em 0;
+          width: 95%;
+          max-width: 30em;
+          margin: 1em auto;
+          border-radius: 0.3em;
+        }
+        @media screen and (max-width: 500px) {
+          body {
+            font-size: 14px;
+          }
+        }
+    </style>
+  </head>
+
+  <body>
+    <div id="flashlight"></div>
+    <br>
+    <p>
+     Myriam, la verdad no esperé volver a sentir lo mismo al verte, eres ese viento que eleva esa llama que tengo dentro. Lamento por siempre dejarte ir y  
+    </p>
+    <p>
+      
+    </p>
+    <script>
+      alert("Move your mouse/finger across the screen!")
+      let mouseX = 0;
+      let mouseY = 0;
+      let flashlight = document.getElementById("flashlight");
+      const isTouchDevice = () => {
+        try {
+          document.createEvent("TouchEvent");
+          return true;
+        } catch (e) {
+          return false;
+        }
+      };
+      function getMousePosition(e) {
+       try{
+        mouseX = !isTouchDevice() ? e.pageX : e.touches[0].pageX;
+        mouseY = !isTouchDevice() ? e.pageY : e.touches[0].pageY;
+        flashlight.style.setProperty("--Xpos", mouseX + "px");
+        flashlight.style.setProperty("--Ypos", mouseY + "px");
+       }
+       catch(e){
+       }
+      }
+      document.addEventListener("mousemove", getMousePosition);
+      document.addEventListener("touchmove", getMousePosition);
+    </script>
+  </body>
+</html>
