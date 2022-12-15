@@ -13,23 +13,18 @@
     <div id="app"></div>
     <script>
       const $app=document.getElementById("app");
-      const options= {name:["tu nombre","myriam"],signo:["signo del zodiaco","acuario"],color:["tu color favorito","negro"]};
+      const options= {name:["tu nombre","myriam"],signo:["tu signo zodiacal","acuario"],color:["tu color favorito","negro"]};
       const $style_dynamic=document.querySelector("#style-dymanic");
 
       let count=0;
       let key= Object.keys(options)[count];
       const validator=(e)=>{
-        if(count  <3){
             if(e.target.value.toLowerCase()==options[key][1]){
-            count++;
-            key=Object.keys(options)[count];
-            $app.innerHTML=null;
-            console.log(count)
-            $app.append(views(key))
-          }
-        }else{
-          message()
-        }
+              count++;
+              key=Object.keys(options)[count];
+              $app.innerHTML=null;
+              (count <3)  ? $app.append(views(key)) : message();
+            }
       }
       
       const views=(key)=> {
@@ -83,7 +78,7 @@
         return $form_box;
       }
       $app.append(views(key));
-      function message(){
+      const message=()=>{
 
       $style_dynamic.innerHTML=null;
       alert("Tus ojos siempre son luz!")
@@ -92,10 +87,9 @@
                 <div id="flashlight"></div>
               <br>
               <p>
-                Myriam, quiero que sepas que me alegre mucho al verte, eres una persona muy especial y me gustaria volver a verte.
-                Así que ya me dirás cuando tengas tiempo, para tomar un café.
-                Saludos y cuídate 😉
-              </p>
+                Myriam, quiero que sepas que me alegre mucho volver a verte, eres una persona muy especial para mi y me gustaría volver a verte.
+                Así que ya me dirás cuando tengas tiempo, para tomar un café.</p>
+                <p>Saludos y cuídate 😉</p>
             `;
         let mouseX = 0;
         let mouseY = 0;
