@@ -9,7 +9,7 @@ const $app=document.getElementById("app");
               count++;
               key=Object.keys(options)[count];
               $app.innerHTML=null;
-              (count <3)  ? $app.append(views(key)) : message();
+              (count < Object.values(options).length)  ? $app.append(views(key)) : message();
             }
       }
       
