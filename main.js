@@ -66,6 +66,41 @@ const $app=document.getElementById("app");
       const message=()=>{
 
       $style_dynamic.innerHTML=null;
+      $style_dynamic.innerHTML=
+      `
+      *{
+        cursor: none;
+      }
+      p {
+        font-size: 1em;
+        text-align: justify;
+        line-height: 1.8em;
+        padding: 0 2em;
+      }
+      #flashlight {
+        --Xpos: 50vw;
+        --Ypos: 50vh;
+      }
+      #flashlight:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        pointer-events: none;
+        background: -o-radial-gradient(
+          var(--Xpos) var(--Ypos),
+          circle 10em,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 1)
+        );
+        background: radial-gradient(
+          circle 10em at var(--Xpos) var(--Ypos),
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 1)
+        );
+      }
+      `;
       alert("Tus ojos siempre son luz en mi!")
       $app.innerHTML=
             `
