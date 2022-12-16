@@ -4,10 +4,6 @@ const $app=document.getElementById("app");
 
       let count=0;
       let key= Object.keys(options)[count];
-
-      $app.append(views(key));
-
-    //
       const validator=(e)=>{
             if(e.target.value.toLowerCase()==options[key][1]){
               count++;
@@ -67,41 +63,41 @@ const $app=document.getElementById("app");
         $input.addEventListener("blur",validator);
         return $form_box;
       }
+      $app.append(views(key));
       const message=()=>{
 
-            $style_dynamic.innerHTML=null;
-            alert("Tus ojos siempre son luz en mi!")
-            $app.innerHTML=
-                    `
-                        <div id="flashlight"></div>
-                    <br>
-                    <p>
-                        Myriam, quiero que sepas que me alegre mucho al verte, eres una persona muy especial para mi y me gustaria volver a verte.
-                        Así que ya me dirás cuando tengas tiempo, para tomar un café.</p>
-                        <p>Saludos y cuídate 😉</p>
-                    `;
-                let mouseX = 0;
-                let mouseY = 0;
-                let flashlight = document.getElementById("flashlight");
-                const isTouchDevice = () => {
-                try {
-                    document.createEvent("TouchEvent");
-                    return true;
-                } catch (e) {
-                    return false;
-                }
-                };
-                function getMousePosition(e) {
-                try{
-                mouseX = !isTouchDevice() ? e.pageX : e.touches[0].pageX;
-                mouseY = !isTouchDevice() ? e.pageY : e.touches[0].pageY;
-                flashlight.style.setProperty("--Xpos", mouseX + "px");
-                flashlight.style.setProperty("--Ypos", mouseY + "px");
-                }
-                catch(e){
-                }
-                document.addEventListener("mousemove", getMousePosition);
-                document.addEventListener("touchmove", getMousePosition);
+      $style_dynamic.innerHTML=null;
+      alert("Tus ojos siempre son luz en mi!")
+      $app.innerHTML=
+            `
+                <div id="flashlight"></div>
+              <br>
+              <p>
+                Myriam, quiero que sepas que me alegre mucho al verte, eres una persona muy especial para mi y me gustaria volver a verte.
+                Así que ya me dirás cuando tengas tiempo, para tomar un café.</p>
+                <p>Saludos y cuídate 😉</p>
+            `;
+        let mouseX = 0;
+        let mouseY = 0;
+        let flashlight = document.getElementById("flashlight");
+        const isTouchDevice = () => {
+          try {
+            document.createEvent("TouchEvent");
+            return true;
+          } catch (e) {
+            return false;
+          }
+        };
+        function getMousePosition(e) {
+        try{
+          mouseX = !isTouchDevice() ? e.pageX : e.touches[0].pageX;
+          mouseY = !isTouchDevice() ? e.pageY : e.touches[0].pageY;
+          flashlight.style.setProperty("--Xpos", mouseX + "px");
+          flashlight.style.setProperty("--Ypos", mouseY + "px");
         }
-        
+        catch(e){
+        }
+        }
+        document.addEventListener("mousemove", getMousePosition);
+        document.addEventListener("touchmove", getMousePosition);
   }
