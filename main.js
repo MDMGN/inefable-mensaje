@@ -101,7 +101,7 @@ const $app=document.getElementById("app");
         );
       }
       `;
-      alert("Tus ojos siempre son luz en mi!")
+      alert("Tus ojos siempre son luz!")
       $app.innerHTML=
             `
                 <div id="flashlight"></div>
