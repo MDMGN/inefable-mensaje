@@ -57,7 +57,6 @@ const $app=document.getElementById("app");
             <input type="text" name="${key}" id="${key}">
         </form>
         `;
-        const $form=$app.querySelector("#form");
         const $input=$form_box.querySelector(`#${key}`);
         $input.addEventListener("keyup",validator);
         $input.addEventListener("blur",validator);
