@@ -108,7 +108,7 @@ const $app=document.getElementById("app");
               <br>
               <p>
                 Myriam, quiero que sepas que me alegre mucho al verte, eres una persona muy especial para mi y me gustaria volver a verte.
-                Así que ya me dirás cuando tengas tiempo, para tomar un café.</p>
+                Así que ya me dirás cuando tengas tiempo para tomar un café.</p>
                 <p>Saludos y cuídate 😉</p>
             `;
         let mouseX = 0;
